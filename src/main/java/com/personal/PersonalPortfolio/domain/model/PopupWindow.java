@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Entity
@@ -13,9 +14,7 @@ public class PopupWindow {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private List<String> titles;
-
-    private List<String> texts;
+    private List<Text> texts;
 
     private ContactForm contactForm;
 
@@ -27,19 +26,11 @@ public class PopupWindow {
         this.id = id;
     }
 
-    public List<String> getTitles() {
-        return titles;
-    }
-
-    public void setTitles(List<String> titles) {
-        this.titles = titles;
-    }
-
-    public List<String> getTexts() {
+    public List<Text> getTexts() {
         return texts;
     }
 
-    public void setTexts(List<String> texts) {
+    public void setTexts(List<Text> texts) {
         this.texts = texts;
     }
 

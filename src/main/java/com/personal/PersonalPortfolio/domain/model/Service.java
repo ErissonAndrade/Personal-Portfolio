@@ -8,15 +8,12 @@ import jakarta.persistence.Id;
 import java.util.List;
 
 @Entity
-public class Service {
-
+public class Service extends Text {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title;
-
-    private String text;
+    private String type;
     private List<ServiceCard> serviceCards;
 
     public Long getId() {
@@ -25,22 +22,6 @@ public class Service {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
     }
 
     public List<ServiceCard> getServiceCards() {
