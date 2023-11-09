@@ -1,4 +1,4 @@
-package com.personal.PersonalPortfolio.domain.model;
+package com.personal.PersonalPortfolio.domain.model.pages;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

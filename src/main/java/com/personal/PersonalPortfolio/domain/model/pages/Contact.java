@@ -1,5 +1,7 @@
-package com.personal.PersonalPortfolio.domain.model;
+package com.personal.PersonalPortfolio.domain.model.pages;
 
+import com.personal.PersonalPortfolio.domain.model.utils.ContactForm;
+import com.personal.PersonalPortfolio.domain.model.utils.ContactInfoCard;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

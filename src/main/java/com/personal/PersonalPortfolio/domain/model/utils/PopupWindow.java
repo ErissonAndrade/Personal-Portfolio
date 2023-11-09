@@ -1,11 +1,10 @@
-package com.personal.PersonalPortfolio.domain.model;
+package com.personal.PersonalPortfolio.domain.model.utils;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.util.HashMap;
 import java.util.List;
 
 @Entity
