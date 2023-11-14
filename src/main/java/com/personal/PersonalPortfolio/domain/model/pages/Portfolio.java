@@ -2,10 +2,7 @@ package com.personal.PersonalPortfolio.domain.model.pages;
 
 import com.personal.PersonalPortfolio.domain.model.utils.PortfolioCard;
 import com.personal.PersonalPortfolio.domain.model.utils.Text;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -15,6 +12,7 @@ public class Portfolio extends Text {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @OneToMany(cascade = CascadeType.ALL)
     private List<PortfolioCard> portfolioCards;
 
     public Long getId() {

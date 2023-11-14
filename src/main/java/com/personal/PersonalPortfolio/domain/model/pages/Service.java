@@ -2,10 +2,7 @@ package com.personal.PersonalPortfolio.domain.model.pages;
 
 import com.personal.PersonalPortfolio.domain.model.utils.ServiceCard;
 import com.personal.PersonalPortfolio.domain.model.utils.Text;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -16,6 +13,8 @@ public class Service extends Text {
     private Long id;
 
     private String type;
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ServiceCard> serviceCards;
 
     public Long getId() {

@@ -1,9 +1,6 @@
 package com.personal.PersonalPortfolio.domain.model.utils;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class ServiceCard extends Text {
@@ -13,6 +10,7 @@ public class ServiceCard extends Text {
 
     private String icon;
 
+    @OneToOne(cascade = CascadeType.ALL)
     private PopupWindow popupWindow;
 
     public Long getId() {

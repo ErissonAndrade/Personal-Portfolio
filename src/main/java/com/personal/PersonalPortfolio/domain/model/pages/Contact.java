@@ -2,10 +2,7 @@ package com.personal.PersonalPortfolio.domain.model.pages;
 
 import com.personal.PersonalPortfolio.domain.model.utils.ContactForm;
 import com.personal.PersonalPortfolio.domain.model.utils.ContactInfoCard;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -19,8 +16,10 @@ public class Contact {
 
     private String text;
 
+    @OneToOne(cascade = CascadeType.ALL)
     private ContactForm contactForm;
 
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ContactInfoCard> contactInfoCards;
 
     public Long getId() {

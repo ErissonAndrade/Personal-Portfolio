@@ -1,9 +1,6 @@
 package com.personal.PersonalPortfolio.domain.model.utils;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 @MappedSuperclass
 public abstract class Text {

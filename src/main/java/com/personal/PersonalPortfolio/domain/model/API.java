@@ -1,20 +1,28 @@
 package com.personal.PersonalPortfolio.domain.model;
 
 import com.personal.PersonalPortfolio.domain.model.pages.*;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
 public class API {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @OneToOne(cascade = CascadeType.ALL)
     private Home home;
+
+    @OneToOne(cascade = CascadeType.ALL)
     private About about;
 
+    @OneToOne(cascade = CascadeType.ALL)
     private Service service;
 
+    @OneToOne(cascade = CascadeType.ALL)
     private Portfolio portfolio;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Contact contact;
 
     public Long getId() {
         return id;
@@ -63,6 +71,4 @@ public class API {
     public void setContact(Contact contact) {
         this.contact = contact;
     }
-
-    private Contact contact;
 }

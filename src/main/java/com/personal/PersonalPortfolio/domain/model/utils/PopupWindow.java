@@ -1,20 +1,16 @@
 package com.personal.PersonalPortfolio.domain.model.utils;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-public class PopupWindow {
+public class PopupWindow extends Text {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private List<Text> texts;
-
+    @OneToOne
     private ContactForm contactForm;
 
     public Long getId() {
@@ -23,14 +19,6 @@ public class PopupWindow {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<Text> getTexts() {
-        return texts;
-    }
-
-    public void setTexts(List<Text> texts) {
-        this.texts = texts;
     }
 
     public ContactForm getContactForm() {
