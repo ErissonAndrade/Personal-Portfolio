@@ -4,7 +4,7 @@ import com.personal.PersonalPortfolio.domain.model.pages.*;
 import jakarta.persistence.*;
 
 @Entity
-public class API {
+public class Api {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
