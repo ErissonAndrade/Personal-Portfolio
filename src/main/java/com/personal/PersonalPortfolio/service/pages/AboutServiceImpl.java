@@ -67,7 +67,7 @@ public class AboutServiceImpl implements AboutService {
         skillCardList.add(skillCard);
 
         aboutRepository.save(about);
-        
+
         return skillCard;
     }
 
