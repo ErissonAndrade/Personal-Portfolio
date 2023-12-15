@@ -16,7 +16,7 @@ public class Api {
     private About about;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Service service;
+    private AvailableServices availableServices;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Portfolio portfolio;
@@ -48,12 +48,12 @@ public class Api {
         this.about = about;
     }
 
-    public Service getService() {
-        return service;
+    public AvailableServices getService() {
+        return availableServices;
     }
 
-    public void setService(Service service) {
-        this.service = service;
+    public void setService(AvailableServices availableServices) {
+        this.availableServices = availableServices;
     }
 
     public Portfolio getPortfolio() {
