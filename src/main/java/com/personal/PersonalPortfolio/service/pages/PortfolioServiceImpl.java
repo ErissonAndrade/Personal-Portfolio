@@ -4,10 +4,12 @@ import com.personal.PersonalPortfolio.domain.model.pages.Portfolio;
 import com.personal.PersonalPortfolio.domain.model.utils.PortfolioCard;
 import com.personal.PersonalPortfolio.domain.repository.PortfolioRepository;
 import com.personal.PersonalPortfolio.service.interfaces.PortfolioService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@Service
 public class PortfolioServiceImpl implements PortfolioService {
 
     private final PortfolioRepository portfolioRepository;

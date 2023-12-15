@@ -3,9 +3,11 @@ package com.personal.PersonalPortfolio.service.pages;
 import com.personal.PersonalPortfolio.domain.model.pages.Home;
 import com.personal.PersonalPortfolio.domain.repository.HomeRepository;
 import com.personal.PersonalPortfolio.service.interfaces.HomeService;
+import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 
+@Service
 public class HomeServiceImpl implements HomeService {
     private final HomeRepository homeRepository;
     HomeServiceImpl(HomeRepository homeRepository) {
