@@ -48,11 +48,11 @@ public class Api {
         this.about = about;
     }
 
-    public AvailableServices getService() {
+    public AvailableServices getAvailableServices() {
         return availableServices;
     }
 
-    public void setService(AvailableServices availableServices) {
+    public void setAvailableServices(AvailableServices availableServices) {
         this.availableServices = availableServices;
     }
 
