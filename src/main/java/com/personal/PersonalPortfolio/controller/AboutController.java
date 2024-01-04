@@ -1,8 +1,11 @@
 package com.personal.PersonalPortfolio.controller;
 
 import com.personal.PersonalPortfolio.domain.model.pages.About;
+import com.personal.PersonalPortfolio.domain.model.utils.SkillCard;
 import com.personal.PersonalPortfolio.service.interfaces.AboutService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/about")
@@ -13,28 +16,47 @@ public class AboutController {
     }
 
     @GetMapping
-    public String about() {
-        return "Hello There";
+    public About about() {
+        return this.aboutService.getAboutById(1L);
     }
 
-    /**
-     * Retrieves the About object with the specified ID.
-     *
-     * @param id the ID of the About object to retrieve
-     * @return the About object with the specified ID
-     */
     @GetMapping("/{id}")
-    public About about(@PathVariable Long id) {
-        return this.aboutService.findById(id);
+    public About getAbout(@PathVariable Long id) {
+        return this.aboutService.getAboutById(id);
     }
 
     @PostMapping
-    public About createAbout(About about){
-        return this.aboutService.create(about);
+    public About createAbout(@RequestBody About aboutToCreate){
+        return this.aboutService.create(aboutToCreate);
     }
 
     @PutMapping("/{id}")
-    public About updateAbout(Long id, About about){
-        return this.aboutService.update(id, about);
+    public About updateAbout(@PathVariable Long id, @RequestBody About aboutToUpdate){
+        return this.aboutService.update(id, aboutToUpdate);
+    }
+
+    @DeleteMapping("/{id}")
+    public About deleteAbout(@PathVariable Long id){
+        return this.aboutService.delete(id);
+    }
+
+    @GetMapping("/{id}/skill-cards")
+    public List<SkillCard> getAboutSkills(@PathVariable Long id){
+        return this.aboutService.getAboutById(id).getSkillCardList();
+    }
+
+    @PostMapping("/{id}/skill-cards")
+    public SkillCard addAboutSkill(@PathVariable Long id, @RequestBody SkillCard skillCard){
+        return this.aboutService.addSkillCard(id, skillCard);
+    }
+
+    @PutMapping("/{id}/skill-cards/{skillCardId}")
+    public SkillCard updateAboutSkill(@PathVariable Long id, @PathVariable Long skillCardId, @RequestBody SkillCard skillCardToUpdate){
+        return this.aboutService.updateSkillCard(id, skillCardId, skillCardToUpdate);
+    }
+
+    @DeleteMapping("/{id}/skill-cards/{skillCardId}")
+    public SkillCard deleteAboutSkill(@PathVariable Long id, @PathVariable Long skillCardId){
+        return this.aboutService.deleteSkillCard(id, skillCardId);
     }
 }
